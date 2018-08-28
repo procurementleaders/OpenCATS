@@ -7,7 +7,7 @@
             <script type="text/javascript" src="../js/careerPortalApply.js"></script>
         <?php global $careerPage; if (isset($careerPage) && $careerPage == true): ?>
             <script type="text/javascript" src="../js/lib.js"></script>
-            <script type="text/javascript" src="../js/sorttable.js"></script>
+            {*<script type="text/javascript" src="../js/sorttable.js"></script>*}
             <script type="text/javascript" src="../js/calendarDateInput.js"></script>
         <?php else: ?>
             <script type="text/javascript" src="js/lib.js"></script>

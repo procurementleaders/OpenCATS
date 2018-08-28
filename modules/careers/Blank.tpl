@@ -7,7 +7,7 @@
             <script type="text/javascript" src="../js/careerPortalApply.js"></script>
         <?php global $careerPage; if (isset($careerPage) && $careerPage == true): ?>
             <script type="text/javascript" src="../js/lib.js"></script>
-            {*<script type="text/javascript" src="../js/sorttable.js"></script>*}
+
             <script type="text/javascript" src="../js/calendarDateInput.js"></script>
         <?php else: ?>
             <script type="text/javascript" src="js/lib.js"></script>
@@ -26,13 +26,12 @@
     <?php echo($this->template['Header']); ?>
 
     <!-- CONTENT -->
+    <main>
     <?php echo($this->template['Content']); ?>
-
+    </main>
     <!-- FOOTER -->
     <?php echo($this->template['Footer']); ?>
-    <div style="font-size:9px;">
-        <br /><br /><br /><br />
-    </div>
+
     <div style="text-align:center;">
 
         <?php /* WARNING: It is against the terms of the CPL to remove or alter the following line.  The 'Powered by CATS' line must stay visible on every page. */ ?>
@@ -40,6 +39,7 @@
 		<a href="http://www.catsone.com" target="_blank"><img src="../images/CATS-powered.gif" alt="Powered by: CATS - Applicant Tracking System" title="Powered by: CATS - Applicant Tracking System" /></a>
 		</div>
     </div>
+
     <script type="text/javascript">st_init();</script>
     </body>
 </html>

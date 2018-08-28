@@ -16,8 +16,7 @@
 			<script type="text/javascript" src="js/careersPage.js"></script>
         <?php endif; ?>
         <style type="text/css" media="all">
-            <?php echo($this->template['CSS']); ?>
-
+            <?php echo($this->template['CSS']); ?> h1, h3, h3{font-family: Robot, 'sans-serif';font-weight: 300; } a {text-decoration: none;}
         </style>
     </head>
     <body>

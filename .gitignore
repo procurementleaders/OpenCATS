@@ -7,3 +7,5 @@ docker/persist/*
 vendor/*
 attachments/*
 temp/*
+config.php
+.idea

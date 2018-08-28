@@ -3,6 +3,7 @@
 <html lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=<?php echo(HTML_ENCODING); ?>"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=PT+Serif|Roboto:300,700" rel="stylesheet">
     <title><?php $this->_($this->siteName); ?> - Careers</title>
     <script type="text/javascript" src="../js/careerPortalApply.js"></script>

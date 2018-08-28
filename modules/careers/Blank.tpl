@@ -24,7 +24,7 @@
         }
 
         h1, h3, h3 {
-            font-family: Robot, 'sans-serif';
+            font-family: 'Roboto', sans-serif;
             font-weight: 300;
         }
 

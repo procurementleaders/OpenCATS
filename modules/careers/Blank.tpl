@@ -24,10 +24,12 @@
             -moz-box-sizing: border-box;
             box-sizing: border-box
         }
+
         h1,
+        h2,
+        h3,
         .h1-style,
         .h2-style,
-        h3,
         .h3-style {
             font-family: Roboto, sans-serif;
             font-weight: 300

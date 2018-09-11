@@ -1008,41 +1008,41 @@ class CareersUI extends UserInterface
         $html .= '<div class="job-listing__inner">';
         foreach ($rs as $index => $line) {
             $html .= '<a href="' . CATSUtility::getIndexName() . '?m=careers' . (isset($_GET['templateName']) ? '&amp;templateName=' . urlencode($_GET['templateName']) : '') . '&amp;p=showJob&amp;ID=' . $line['jobOrderID'] . '">';
-            $html .= '<article class="job-listing__single-item-wrapper">';
-
-            $html .= '<div class="job-listing__single-item__inner">';
-
-            $html .= '<p class="job-listing__single-item__location-department">';
-            $html .= '<span class="job-listing__single-item__location">';
-            $html .= htmlspecialchars($line['city']) . ', ' . htmlspecialchars($line['state']);
-            $html .= '</span>';
-            $html .= '<span class="job-listing__single-item__divider"> - </span>';
-            $html .= '<span class="job-listing__single-item__location">';
-            $html .= htmlspecialchars($line['departmentName']);
-            $html .= '</span>';
-            $html .= '</p>';
-
-            $html .= '<h3 class="job-listing__single-item__title">';
-
-            $html .= htmlspecialchars($line['title']);
-
-            $html .= '</h3>';
-
-
-
-            $html .= '<p class="job-listing__single-item__teaser">';
-            $site = new Site(-1);
-            $siteID = $site->getFirstSiteID();
-
-            $jobOrders = new JobOrders($siteID);
-
-            $extraFieldsForJobOrders = $jobOrders->extraFields->getValuesForShow($line['jobOrderID']);
-
-            $html .= $extraFieldsForJobOrders[0]['display'];
-
-            $html .= '</p>';
-
-            $html .= '</div>';
+//            $html .= '<article class="job-listing__single-item-wrapper">';
+//
+//            $html .= '<div class="job-listing__single-item__inner">';
+//
+//            $html .= '<p class="job-listing__single-item__location-department">';
+//            $html .= '<span class="job-listing__single-item__location">';
+//            $html .= htmlspecialchars($line['city']) . ', ' . htmlspecialchars($line['state']);
+//            $html .= '</span>';
+//            $html .= '<span class="job-listing__single-item__divider"> - </span>';
+//            $html .= '<span class="job-listing__single-item__location">';
+//            $html .= htmlspecialchars($line['departmentName']);
+//            $html .= '</span>';
+//            $html .= '</p>';
+//
+//            $html .= '<h3 class="job-listing__single-item__title">';
+//
+//            $html .= htmlspecialchars($line['title']);
+//
+//            $html .= '</h3>';
+//
+//
+//
+//            $html .= '<p class="job-listing__single-item__teaser">';
+//            $site = new Site(-1);
+//            $siteID = $site->getFirstSiteID();
+//
+//            $jobOrders = new JobOrders($siteID);
+//
+//            $extraFieldsForJobOrders = $jobOrders->extraFields->getValuesForShow($line['jobOrderID']);
+//
+//            $html .= $extraFieldsForJobOrders[0]['display'];
+//
+//            $html .= '</p>';
+//
+//            $html .= '</div>';
             $html .= '</article>';
             $html .= '</a>';
         }

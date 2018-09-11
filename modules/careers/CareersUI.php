@@ -1012,14 +1012,7 @@ class CareersUI extends UserInterface
 
             $html .= '<div class="job-listing__single-item__inner">';
 
-            $html .= '<h3 class="job-listing__single-item__title">';
-
-            $html .= htmlspecialchars($line['title']);
-
-            $html .= '</h3>';
-
             $html .= '<p class="job-listing__single-item__location-department">';
-
             $html .= '<span class="job-listing__single-item__location">';
             $html .= htmlspecialchars($line['city']) . ', ' . htmlspecialchars($line['state']);
             $html .= '</span>';
@@ -1028,6 +1021,14 @@ class CareersUI extends UserInterface
             $html .= htmlspecialchars($line['departmentName']);
             $html .= '</span>';
             $html .= '</p>';
+
+            $html .= '<h3 class="job-listing__single-item__title">';
+
+            $html .= htmlspecialchars($line['title']);
+
+            $html .= '</h3>';
+
+
 
             $html .= '<p class="job-listing__single-item__teaser">';
             $site = new Site(-1);

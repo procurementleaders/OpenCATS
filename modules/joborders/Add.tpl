@@ -339,19 +339,6 @@
 
                     <tr>
                         <td class="tdVertical">
-                            <label id="teaserLabel" for="teaser">Teaser</label>
-                        </td>
-                        <td class="tdData">
-                            <textarea tabindex="19" class="ckEditor" name="teaser" id="teaser" rows="5"
-                                      style="width: 500px;"><?php if (isset($this->jobOrderSourceRS['teaser'])): ?>
-
-                                    <?php $this->_($this->jobOrderSourceRS['teaser']); ?><?php endif; ?></textarea>
-                        </td>
-                    </tr>
-
-
-                    <tr>
-                        <td class="tdVertical">
                             <label id="notesLabel" for="notes">Internal Notes:</label>
                         </td>
                         <td class="tdData">

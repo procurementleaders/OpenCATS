@@ -1050,6 +1050,7 @@ class CareersUI extends UserInterface
             $html .= '<span class="job-listing__single-item__location">';
 
             $html .= htmlspecialchars($line['departmentName']);
+            $html .= htmlspecialchars($line['description']);
             $html .= '</span>';
 
             $html .= '</p>';

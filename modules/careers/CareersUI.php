@@ -1006,29 +1006,6 @@ class CareersUI extends UserInterface
 
         $html = '<div class="job-listing-wrapper">';
         $html .= '<div class="job-listing__inner">';
-//        if ($unformatted)
-//        {
-//            $html  = '<table class="sortable">' . "\n";
-//        }
-//        else
-//        {
-//            $html  = '<table class="sortable" style="width:100%;">' . "\n";
-//        }
-//        $html .= '<tr class="rowHeading" align="left">'."\n";
-//        if ($settings['showCompany'] == 1)
-//        {
-//            $html .= '<th nowrap="nowrap">Company</th>';
-//        }
-//        if ($settings['showDepartment'] == 1)
-//        {
-//            $html .= '<th nowrap="nowrap" align="left">Department</th>';
-//        }
-
-//        $html .= '<th nowrap="nowrap" align="left">Position Title</th>';
-//        $html .= '<th nowrap="nowrap" align="left">Location</th>';
-//        $html .= '</tr>' . "\n";
-//
-//        $rowIsEven = false;
         foreach ($rs as $index => $line) {
             $html .= '<a href="' . CATSUtility::getIndexName() . '?m=careers' . (isset($_GET['templateName']) ? '&amp;templateName=' . urlencode($_GET['templateName']) : '') . '&amp;p=showJob&amp;ID=' . $line['jobOrderID'] . '">';
             $html .= '<article class="job-listing__single-item-wrapper">';
@@ -1053,7 +1030,15 @@ class CareersUI extends UserInterface
             $html .= '</p>';
 
             $html .= '<p class="job-listing__single-item__teaser">';
-            $html .= $extraFields;
+
+            $siteID = $site->getFirstSiteID();
+
+            $jobOrders = new JobOrders($siteID);
+
+            $extraFieldsForJobOrders = $jobOrders->extraFields->getValuesForShow($jobID);
+
+            $html .= $extraFieldsForJobOrders;
+
             $html .= '</p>';
 
             $html .= '</div>';
@@ -1062,8 +1047,6 @@ class CareersUI extends UserInterface
         }
 
         $html .= '</div>';
-//        $html .= '</table>';
-
         return $html;
     }
 

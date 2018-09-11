@@ -1035,7 +1035,7 @@ class CareersUI extends UserInterface
 
             $jobOrders = new JobOrders($siteID);
 
-            $extraFieldsForJobOrders = $jobOrders->extraFields->getValuesForShow($jobID);
+            $extraFieldsForJobOrders = $jobOrders->extraFields->getValuesForShow($line['jobOrderID']);
 
             $html .= json_encode($extraFieldsForJobOrders);
 

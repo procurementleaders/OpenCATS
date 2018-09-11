@@ -456,7 +456,7 @@ class TestOfAbsoluteUrls extends UnitTestCase {
 class TestOfFrameUrl extends UnitTestCase {
     
     function testTargetAttachment() {
-        $url = new SimpleUrl('http://www.site.com/home.html');
+        $url = new SimpleUrl('http://www.site.com/main.html');
         $this->assertIdentical($url->getTarget(), false);
         $url->setTarget('A frame');
         $this->assertIdentical($url->getTarget(), 'A frame');

@@ -1030,7 +1030,7 @@ class CareersUI extends UserInterface
             $html .= '</p>';
 
             $html .= '<p class="job-listing__single-item__teaser">';
-
+            $site = new Site(-1);
             $siteID = $site->getFirstSiteID();
 
             $jobOrders = new JobOrders($siteID);

@@ -1048,49 +1048,10 @@ class CareersUI extends UserInterface
             $html .= '</span>';
             $html .= '<span class="job-listing__single-item__divider"> - </span>';
             $html .= '<span class="job-listing__single-item__location">';
-
             $html .= htmlspecialchars($line['departmentName']);
-            $html .= htmlspecialchars($line['description']);
+            $html .= htmlspecialchars($line['jobDescription']);
             $html .= '</span>';
-
             $html .= '</p>';
-
-
-//            $rowIsEven = !$rowIsEven;
-//            if ($rowIsEven) {
-//                $html .= '<tr class="evenTableRow">' . "\n";
-//            } else {
-//                $html .= '<tr class="oddTableRow">' . "\n";
-//            }
-//
-//            if ($settings['showCompany'] == 1) {
-//                $html .= '<td>';
-//                $html .= htmlspecialchars($line['companyName']);
-//                $html .= '</td>';
-//            }
-//
-//            if ($settings['showDepartment'] == 1) {
-//                $html .= '<td>';
-//                if ($line['departmentID'] == 0) {
-//                    $html .= 'General';
-//                } else {
-//                    $html .= htmlspecialchars($line['departmentName']);
-//                }
-//                $html .= '</td>';
-//            }
-
-//            $html .= '<td>';
-//            $html .= '<a href="' . CATSUtility::getIndexName() . '?m=careers' . (isset($_GET['templateName']) ? '&amp;templateName=' . urlencode($_GET['templateName']) : '') . '&amp;p=showJob&amp;ID=' . $line['jobOrderID'] . '">';
-//            $html .= htmlspecialchars($line['title']);
-//            $html .= '</a>';
-//            $html .= '</td>';
-//
-//            $html .= '<td>';
-//            $html .= htmlspecialchars($line['city']) . ', ' . htmlspecialchars($line['state']);
-//            $html .= '</td>';
-//
-//            $html .= '</tr>' . "\n";
-
             $html .= '</div>';
             $html .= '</article>';
             $html .= '</a>';

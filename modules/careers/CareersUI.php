@@ -1053,7 +1053,7 @@ class CareersUI extends UserInterface
             $html .= '</p>';
 
             $html .= '<p class="job-listing__single-item__teaser">';
-            $html .= htmlspecialchars($line['extraFields']);
+            $html .= $extraFields;
             $html .= '</p>';
 
             $html .= '</div>';

@@ -1030,14 +1030,15 @@ class CareersUI extends UserInterface
 //
 //        $rowIsEven = false;
         foreach ($rs as $index => $line) {
+            $html .= '<a href="' . CATSUtility::getIndexName() . '?m=careers' . (isset($_GET['templateName']) ? '&amp;templateName=' . urlencode($_GET['templateName']) : '') . '&amp;p=showJob&amp;ID=' . $line['jobOrderID'] . '">';
             $html .= '<article class="job-listing__single-item-wrapper">';
 
             $html .= '<div class="job-listing__single-item__inner">';
 
             $html .= '<h3 class="job-listing__single-item__title">';
-            $html .= '<a href="' . CATSUtility::getIndexName() . '?m=careers' . (isset($_GET['templateName']) ? '&amp;templateName=' . urlencode($_GET['templateName']) : '') . '&amp;p=showJob&amp;ID=' . $line['jobOrderID'] . '">';
+
             $html .= htmlspecialchars($line['title']);
-            $html .= '</a>';
+
             $html .= '</h3>';
 
             $html .= '<p class="job-listing__single-item__location-department">';
@@ -1091,6 +1092,7 @@ class CareersUI extends UserInterface
 
             $html .= '</div>';
             $html .= '</article>';
+            $html .= '</a>';
         }
 
         $html .= '</div>';

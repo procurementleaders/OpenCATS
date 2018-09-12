@@ -552,8 +552,8 @@ class CareersUI extends UserInterface
                 '<input type="hidden" id="applyToJobSubAction" name="applyToJobSubAction" value="" /> '
                 . '<input type="hidden" id="file" name="file" value="' . $resumeFileLocation . '" /> '
                 . '<input type="file" id="resumeFile" name="resumeFile" class="inputBoxFile" size="30" onchange="resumeLoadCheck();" /> '
-                . '<label for="resumeFile">Choose a file</label>'
-                . '<input type="button" id="resumeLoad" name="resumeLoad" value="Upload" onclick="resumeLoadFile();" disabled /><br /> '
+                . '<label for="resumeFile">Choose your CV file</label>'
+                . '<input type="button" id="resumeLoad" name="resumeLoad" value="Upload your CV" onclick="resumeLoadFile();" disabled /><br /> '
                 . $attachmentHTML
                 . '<textarea id="resumeContents" name="resumeContents" class="inputBoxArea" onmousemove="resumeContentsChange(this);" '
                 . 'onchange="resumeContentsChange(this);" onmousedown="resumeContentsChange(this);" '

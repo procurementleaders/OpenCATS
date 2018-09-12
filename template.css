@@ -43,9 +43,11 @@ body {
 .no-margin-top {
     margin-top: 0;
 }
+
 .no-margin-bottom {
     margin-bottom: 0;
 }
+
 ul.no-list {
     list-style: none;
     margin-left: 0;
@@ -171,6 +173,7 @@ header.home-header-wrapper {
     padding: .9375rem;
     margin-bottom: .9375rem;
 }
+
 .job-listing__single-item__teaser
 h3.job-listing__single-item__title {
     color: #666;
@@ -197,9 +200,8 @@ h3.job-listing__single-item__title {
     margin-bottom: 0;
 }
 
-
 /* START Job detail */
-.job-detail__inner{
+.job-detail__inner {
     max-width: 53.25rem;
     margin: 0 auto;
     background-color: #fff;
@@ -213,6 +215,7 @@ h3.job-listing__single-item__title {
     margin-top: .9375rem;
     margin-bottom: .9375rem;
 }
+
 /* END Job detail */
 
 /* START Apply */
@@ -222,9 +225,10 @@ h3.job-listing__single-item__title {
 
 .apply__inner {
     max-width: 53.25rem;
-    margin:  0 auto;
+    margin: 0 auto;
     background-color: #fff;
 }
+
 /* END Apply */
 
 @media screen and (max-width: 1024px) {
@@ -255,4 +259,53 @@ h3.job-listing__single-item__title {
     .inner-padding {
         padding: 3.75rem 1rem;
     }
+}
+
+/* File upload */
+#resumeFile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+#resumeFile + label {
+    font-weight: 700;
+    color: #fff;
+    background-color: #ef7d25;
+    display: inline-block;
+    font-family: Roboto, 'sans-serif';
+    font-size: .75rem;
+    padding: 10px 15px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: .3s ease-out;
+    margin-bottom: .9375rem;
+}
+
+#resumeFile:focus + label,
+#resumeFile + label:hover {
+    -webkit-box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14), 0 1px 7px 0 rgba(0,0,0,0.12), 0 3px 1px -1px rgba(0,0,0,0.2);
+    box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14), 0 1px 7px 0 rgba(0,0,0,0.12), 0 3px 1px -1px rgba(0,0,0,0.2);
+}
+
+#resumeFile + label {
+    cursor: pointer; /* "hand" cursor */
+}
+
+#resumeFile:focus + label {
+    outline: 1px dotted #000;
+    outline: -webkit-focus-ring-color auto 5px;
+}
+
+#resumeFile + label * {
+    pointer-events: none;
+}
+
+/* Hide the upload button*/
+input#resumeLoad:disabled {
+    display: none;
 }

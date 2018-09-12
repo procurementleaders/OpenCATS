@@ -556,7 +556,7 @@ class CareersUI extends UserInterface
                 . $attachmentHTML
                 . '<textarea id="resumeContents" name="resumeContents" class="inputBoxArea" onmousemove="resumeContentsChange(this);" '
                 . 'onchange="resumeContentsChange(this);" onmousedown="resumeContentsChange(this);" '
-                . 'style="width: 410px; height: 150px;">' . $resumeContents . '</textarea><br /> '
+                . 'style="width: 100%; height: 150px;">' . $resumeContents . '</textarea><br /> '
                 . (
                     // If parsing is enabled, add the image link for it
                 LicenseUtility::isParsingEnabled() ?

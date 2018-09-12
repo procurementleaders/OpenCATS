@@ -538,9 +538,9 @@ class CareersUI extends UserInterface
             $template['Content'] = str_replace('<input-zip>', '<input name="zip" id="zip" class="inputBoxNormal" value="' . $zip . '" />', $template['Content']);
             $template['Content'] = str_replace('<input-phone>', '<input name="phone" id="phone" class="inputBoxNormal" value="' . $phone . '" />', $template['Content']);
             $template['Content'] = str_replace('<input-email>', '<input placeholder="Your email address" name="email" type="email" name="Your email address" id="email" class="inputBoxNormal" value="' . $email . '" />', $template['Content']);
-            $template['Content'] = str_replace('<input-phone-home>', '<input name="phoneHome" id="phoneHome" class="inputBoxNormal" value="' . $phoneHome . '" />', $template['Content']);
+            $template['Content'] = str_replace('<input-phone-home>', '<input type="tel" placeholder="Your phone number" name="phoneHome" id="phoneHome" class="inputBoxNormal" value="' . $phoneHome . '" />', $template['Content']);
             $template['Content'] = str_replace('<input-phone-cell>', '<input name="phoneCell" id="phoneCell" class="inputBoxNormal" value="' . $phoneCell . '" />', $template['Content']);
-            $template['Content'] = str_replace('<input-best-time-to-call>', '<input name="bestTimeToCall" id="bestTimeToCall" class="inputBoxNormal" value="' . $bestTimeToCall . '" />', $template['Content']);
+            $template['Content'] = str_replace('<input-best-time-to-call>', '<input placeholder="What time should we call you?" name="bestTimeToCall" id="bestTimeToCall" class="inputBoxNormal" value="' . $bestTimeToCall . '" />', $template['Content']);
             $template['Content'] = str_replace('<input-email2>', '<input name="email2" id="email2" class="inputBoxNormal" value="' . $email2 . '" />', $template['Content']);
             $template['Content'] = str_replace('<input-emailconfirm>', '<input type="email" placeholder="Confirm your email address" name="emailconfirm" id="emailconfirm" class="inputBoxNormal" value="' . $emailconfirm . '" />', $template['Content']);
             $template['Content'] = str_replace('<input-keySkills>', '<input placeholder="A list of your key skills" name="keySkills" id="keySkills" class="inputBoxNormal" value="' . $keySkills . '" />', $template['Content']);

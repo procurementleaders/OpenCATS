@@ -553,6 +553,27 @@ class CareersUI extends UserInterface
                 . '<input type="hidden" id="file" name="file" value="' . $resumeFileLocation . '" /> '
                 . '<input type="file" id="resumeFile" name="resumeFile" class="inputBoxFile" size="30" onchange="resumeLoadCheck();" /> '
                 . '<label for="resumeFile">Choose your CV file</label>'
+                . '<input type="file" name="file" id="file" class="inputfile" data-multiple-caption="{count} files selected" multiple />'
+                .'<script>var inputs = document.querySelectorAll( ".inputfile" );
+Array.prototype.forEach.call( inputs, function( input )
+{
+	var label	 = input.nextElementSibling,
+		labelVal = label.innerHTML;
+
+	input.addEventListener( "change", function( e )
+	{
+		var fileName = "";
+		if( this.files && this.files.length > 1 )
+			fileName = ( this.getAttribute("data-multiple-caption" || "" ).replace("{count}", this.files.length );
+		else
+			fileName = e.target.value.split( "\\").pop();
+
+		if( fileName )
+			label.querySelector( "span" ).innerHTML = fileName;
+		else
+			label.innerHTML = labelVal;
+	});
+});</script>'
                 . '<input type="button" id="resumeLoad" name="resumeLoad" value="Upload your CV" onclick="resumeLoadFile();" disabled /><br /> '
                 . $attachmentHTML
                 . '<textarea id="resumeContents" name="resumeContents" class="inputBoxArea" onmousemove="resumeContentsChange(this);" '

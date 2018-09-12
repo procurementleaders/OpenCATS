@@ -271,7 +271,8 @@ h3.job-listing__single-item__title {
     z-index: -1;
 }
 
-#resumeFile + label {
+#resumeFile + label,
+input#resumeLoad{
     font-weight: 700;
     color: #fff;
     background-color: #ef7d25;
@@ -308,4 +309,7 @@ h3.job-listing__single-item__title {
 /* Hide the upload button*/
 input#resumeLoad:disabled {
     display: none;
+}
+input#resumeLoad {
+    border: none;
 }

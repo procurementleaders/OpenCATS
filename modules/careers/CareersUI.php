@@ -521,7 +521,7 @@ class CareersUI extends UserInterface
             if ($resumeFileLocation != '') {
                 $attachmentHTML = '<div class="cv-upload-info"> '
                     . '<img  class="cv-upload-info__image" src="https://www.procurementleaders.com/AcuCustom/Sitename/Icon/Icons/baseline_attach_file_white_18dp.png" border="0" style="padding-top: 3px;" /> '
-                    . 'Attachment: <span style="font-weight: bold;">' . $resumeFileLocation . '</span> '
+                    . '<span style="font-weight: bold;">' . $resumeFileLocation . '</span> '
                     . '</div> ';
             } else {
                 $attachmentHTML = '';

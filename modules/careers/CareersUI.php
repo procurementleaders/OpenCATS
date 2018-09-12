@@ -519,9 +519,8 @@ class CareersUI extends UserInterface
 
             /* Get the attachment (friendly) file name is there is an attachment uploaded */
             if ($resumeFileLocation != '') {
-                $attachmentHTML = '<div style="height: 20px; background-color: #e0e0e0; margin: 5px 0 0px 0; '
-                    . 'padding: 0 3px 0 5px; font-size: 11px;"> '
-                    . '<img src="images/parser/attachment.gif" border="0" style="padding-top: 3px;" /> '
+                $attachmentHTML = '<div class="cv-upload-info"> '
+                    . '<img  class="cv-upload-info__image" src="https://www.procurementleaders.com/AcuCustom/Sitename/Icon/Icons/baseline_attach_file_white_18dp.png" border="0" style="padding-top: 3px;" /> '
                     . 'Attachment: <span style="font-weight: bold;">' . $resumeFileLocation . '</span> '
                     . '</div> ';
             } else {

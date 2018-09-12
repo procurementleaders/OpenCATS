@@ -217,7 +217,7 @@ class CareersUI extends UserInterface
             $content = str_replace('<input-currentEmployer>', '<input name="currentEmployer" id="currentEmployer" class="inputBoxNormal" value="' . $candidate['currentEmployer'] . '" />', $content);
             $content = str_replace('<input-resume>',
                 '<strong>My Resume</strong><br />'
-                . '<textarea name="resumeContents" class="inputBoxArea" style="width: 400px; height: 200px;" readonly>'
+                . '<textarea name="resumeContents" class="inputBoxArea" readonly>'
                 . ($latestAttachment !== false ? DatabaseSearch::fulltextDecode($myResume['text']) : '') . '</textarea>'
                 . '<br /><br /><strong>Upload new resume:</strong><br /> '
                 . '<input type="file" name="file" id="file" type="file" class="inputBoxFile" size="45" />',

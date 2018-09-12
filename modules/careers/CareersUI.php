@@ -561,7 +561,7 @@ class CareersUI extends UserInterface
                     // If parsing is enabled, add the image link for it
                 LicenseUtility::isParsingEnabled() ?
                     '<br /><div style="text-align: right;">'
-                    . '<input type="button" value="Populate Fields ->" id="resumePopulate" onclick="resumeParse();" ' . (strlen($resumeContents) ? '' : 'disabled') . ' />'
+                    . '<input type="button" value="Populate Fields ->" id="resumePopulate" onclick="resumeParse();" ' . (strlen($resumeContents) ? '' : 'disabled') . ' /></div>'
                     :
                     ''
                 ),

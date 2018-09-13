@@ -1,3 +1,9 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
 }
@@ -174,7 +180,7 @@ header.home-header-wrapper {
     margin-bottom: .9375rem;
 }
 
-.job-listing__single-item__teaser
+.job-listing__single-item__teaser,
 h3.job-listing__single-item__title {
     color: #666;
     margin-bottom: 0;
@@ -236,7 +242,8 @@ h3.job-listing__single-item__title {
         padding: 3.75rem;
     }
 
-    .inner-padding {
+    .inner-padding,
+    .site-header__inner {
         padding: 3.75rem;
     }
 }
@@ -246,8 +253,9 @@ h3.job-listing__single-item__title {
         padding: 1.25rem;
     }
 
-    .inner-padding {
-        padding: 3.75rem 1.25rem;
+    .inner-padding,
+    .site-header__inner {
+        padding: 1.25rem;
     }
 }
 
@@ -256,9 +264,14 @@ h3.job-listing__single-item__title {
         padding: 1rem;
     }
 
-    .inner-padding {
-        padding: 3.75rem 1rem;
+    .inner-padding,
+    .site-header__inner {
+        padding: 1rem;
     }
+}
+
+.apply__form-inner ol {
+    padding-left: 20px;
 }
 
 /* File upload */
@@ -272,7 +285,8 @@ h3.job-listing__single-item__title {
 }
 
 #resumeFile + label,
-input#resumeLoad{
+input#resumeLoad,
+input#resumePopulate {
     font-weight: 700;
     color: #fff;
     background-color: #ef7d25;
@@ -285,12 +299,16 @@ input#resumeLoad{
     letter-spacing: 1px;
     transition: .3s ease-out;
     margin-bottom: .9375rem;
+    border: none;
 }
 
 #resumeFile:focus + label,
-#resumeFile + label:hover {
-    -webkit-box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14), 0 1px 7px 0 rgba(0,0,0,0.12), 0 3px 1px -1px rgba(0,0,0,0.2);
-    box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14), 0 1px 7px 0 rgba(0,0,0,0.12), 0 3px 1px -1px rgba(0,0,0,0.2);
+#resumeFile + label:hover,
+input#resumeLoad:hover,
+#submitApplicationNow:hover,
+input#resumePopulate:hover {
+    -webkit-box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 7px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -1px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 7px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -1px rgba(0, 0, 0, 0.2);
 }
 
 #resumeFile + label {
@@ -306,10 +324,84 @@ input#resumeLoad{
     pointer-events: none;
 }
 
+.cv-upload-info {
+    background-color: #008e7f;
+    color: #fff;
+    font-family: Roboto, 'sans-serif';
+    font-size: .75rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: .375rem;
+}
+
+img.cv-upload-info__image {
+    width: 15px;
+    margin-right: .9375rem;
+}
+
+.field-group-wrapper,
+.field-group-wrapper label,
+.field-group-wrapper input {
+    width: 100%;
+    display: inline-block;
+    font-family: Roboto, 'sans-serif';
+    text-align: left;
+}
+
+.field-group-wrapper {
+    margin-bottom: .9375rem
+}
+
+.field-group-wrapper label {
+    margin-bottom: .375rem
+}
+
+.field-group-wrapper input {
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    border: solid 1px #ccc;
+    font-size: 1rem;
+    padding: .375rem;
+}
+
+span.required-field {
+    color: red;
+    margin-right: .375rem
+}
+
 /* Hide the upload button*/
 input#resumeLoad:disabled {
     display: none;
 }
+
 input#resumeLoad {
     border: none;
+    float: right;
+}
+
+button#submitApplicationNow {
+    background-color: #ef7d25;
+    color: #ffffff;
+    padding: 10px 15px;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    transition: .3s ease-out;
+}
+.thank-you-wrapper.text-center {
+    background-color: #fafafa;
+}
+
+.thank-you__inner.inner-padding {
+    background-color: #fff;
+}
+a.big-link {
+    color: #ef7d25;
+    font-size: 21px;
+    font-style: normal;
+    font-family: Roboto, 'sans-serif';
+    font-weight: 600;
+    letter-spacing: 1px;
 }

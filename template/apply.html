@@ -1,135 +1,85 @@
 <div class="apply-wrapper">
     <div class="apply__inner inner-padding">
-        <h1>Submit your application</h1>
+        <h1 class="no-margin-top">Submit your application</h1>
         <h3>You are applying for the <em><title></em> position at Procurement Leaders.</h3>
 
         <div class="apply__form-wrapper">
             <div class="apply__form-inner">
 
 
-                <ol>
+                <h3>Upload your CV and populate fields</h3>
+                <input-resumeUploadPreview>
 
 
-                    <li><h3>
-                        Import Resume (or CV) and Populate Fields</h3>
-                        <input-resumeUploadPreview>
+                    <h3>Tell us about yourself</h3>
+                    <p class="instructions">All fields marked with asterisk (*) are required.</p>
 
-                    </li>
+                    <div class="field-group-wrapper">
+                        <label id="firstNameLabel" for="firstName"><span class="required-field">*</span>First
+                            Name:</label>
+                        <input-firstName>
+                    </div>
+
+                    <div class="field-group-wrapper">
+                        <label id="lastNameLabel" for="lastName"><span class="required-field">*</span>Last
+                            Name:</label>
+                        <input-lastName>
+                    </div>
+                    <div class="field-group-wrapper">
+                        <label id="emailLabel" for="email"><span class="required-field">*</span>Email
+                            Adddress:</label>
+
+                        <input-email>
+                    </div>
+                    <div class="field-group-wrapper">
+                        <label id="emailConfirmLabel" for="emailconfirm"><span class="required-field">*</span>Confirm
+                            Email:</label>
+
+                        <input-emailconfirm>
+                    </div>
 
 
-                    <li>
-                        <h3>Tell us about yourself</h3>
-                        <p class="instructions">All fields marked with asterisk (*) are required.</p>
+                    <h3>How should we contact you?</h3>
+
+                    <div class="field-group-wrapper">
+                        <label id="homePhoneLabel" for="homePhone">Phone number:</label>
+
+                        <input-phone-home>
+                    </div>
+
+                    <div class="field-group-wrapper">
+                        <label id="bestTimeLabel" for="bestTime"><span class="required-field">*</span>Best time to call:</label>
+
+                        <input-best-time-to-call>
+                    </div>
+
+                    <div class="field-group-wrapper">
+                        <label id="cityProvinceLabel"
+                               for="cityProvince"><span class="required-field">*</span>City/Province:</label>
+
+                        <input-city>
+                    </div>
 
 
-                        <table>
-                            <tr>
-                                <td class="label"><label id="firstNameLabel" for="firstName">*First Name:</label></td>
-                                <td>
-                                    <input-firstName>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="label"><label id="lastNameLabel" for="lastName">*Last Name:</label></td>
-                                <td>
-                                    <input-lastName>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="label"><label id="emailLabel" for="email">*Email Adddress:</label></td>
-                                <td>
-                                    <input-email>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="label"><label id="emailConfirmLabel" for="emailconfirm">*Confirm
-                                    Email:</label></td>
-                                <td>
-                                    <input-emailconfirm>
-                                </td>
-                            </tr>
-                        </table>
-                    </li>
+                    <h3>Additional Information</h3>
 
-                    <li><h3>How may we contact you?</h3>
-                        <table>
-                            <tr>
-                                <td class="label"><label id="homePhoneLabel" for="homePhone">Home Phone:</label></td>
-                                <td>
-                                    <input-phone-home>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="label"><label id="mobilePhoneLabel" for="mobilePhone">Mobile Phone:</label>
-                                </td>
-                                <td>
-                                    <input-phone-cell>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="label"><label id="workPhoneLabel" for="workPhone">Work Phone:</label></td>
-                                <td>
-                                    <input-phone>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="label"><label id="bestTimeLabel" for="bestTime">*Best time to call:</label>
-                                </td>
-                                <td>
-                                    <input-best-time-to-call>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="label"><label id="mailingAddressLabel" for="mailingAddress">Mailing
-                                    Address:</label></td>
-                                <td>
-                                    <input-address>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="label"><label id="cityProvinceLabel"
-                                                         for="cityProvince">*City/Province:</label></td>
-                                <td>
-                                    <input-city>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="label"><label id="stateCountryLabel"
-                                                         for="stateCountry">*State/Country:</label></td>
-                                <td>
-                                    <input-state>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="label"><label id="zipPostalLabel" for="zipPostal">*Zip/Postal Code:</label>
-                                </td>
-                                <td>
-                                    <input-zip>
-                                </td>
-                            </tr>
-                        </table>
-                    </li>
-                    <li><h3>Additional Information</h3>
-                        <table>
-                            <tr>
-                                <td class="label"><label id="keySkillsLabel" for="keySkills">*Key Skills:</label></td>
-                                <td>
-                                    <input-keySkills>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>&nbsp;</td>
-                                <td><img src="images/careers_submit.gif"
-                                         onmouseover="buttonMouseOver('submitApplicationNow',true)"
-                                         onmouseout="buttonMouseOver('submitApplicationNow',false)"
-                                         style="cursor: pointer;"
-                                         id="submitApplicationNow" alt="Submit Application Now"
-                                         onclick="if (applyValidate()) { document.applyToJobForm.submit(); }"/></td>
-                            </tr>
-                        </table>
-                    </li>
+                    <div class="field-group-wrapper">
+                        <label id="keySkillsLabel" for="keySkills"><span class="required-field">*</span>Key
+                            Skills:</label>
+                        <input-keySkills>
+                    </div>
 
-                </ol>
+
+                    <button
+                            onmouseover="buttonMouseOver('submitApplicationNow',true)"
+                            onmouseout="buttonMouseOver('submitApplicationNow',false)"
+                            style="cursor: pointer;"
+                            id="submitApplicationNow"
+                            class="button main"
+                            onclick="if (applyValidate()) { document.applyToJobForm.submit(); }">SUBMIT APPLICATION
+                    </button>
+
+
             </div>
         </div>
     </div>

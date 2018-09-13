@@ -40,7 +40,7 @@
 /* Do we need to run the installer? */
 if (!file_exists('INSTALL_BLOCK') && !isset($_POST['performMaintenence']))
 {
-    include('modules/install/notinstalled.php');
+    include('../modules/install/notinstalled.php');
     die();
 }
 
@@ -53,19 +53,19 @@ if (function_exists('date_default_timezone_set'))
     @date_default_timezone_set(date_default_timezone_get());
 }
 
-include_once('./config.php');
-include_once('./constants.php');
-include_once('./lib/CommonErrors.php');
-include_once('./lib/CATSUtility.php');
-include_once('./lib/DatabaseConnection.php');
-include_once('./lib/Template.php');
-include_once('./lib/Users.php');
-include_once('./lib/MRU.php');
-include_once('./lib/Hooks.php');
-include_once('./lib/Session.php'); /* Depends: MRU, Users, DatabaseConnection. */
-include_once('./lib/UserInterface.php'); /* Depends: Template, Session. */
-include_once('./lib/ModuleUtility.php'); /* Depends: UserInterface */
-include_once('./lib/TemplateUtility.php'); /* Depends: ModuleUtility, Hooks */
+include_once('../config.php');
+include_once('../constants.php');
+include_once('../lib/CommonErrors.php');
+include_once('../lib/CATSUtility.php');
+include_once('../lib/DatabaseConnection.php');
+include_once('../lib/Template.php');
+include_once('../lib/Users.php');
+include_once('../lib/MRU.php');
+include_once('../lib/Hooks.php');
+include_once('../lib/Session.php'); /* Depends: MRU, Users, DatabaseConnection. */
+include_once('../lib/UserInterface.php'); /* Depends: Template, Session. */
+include_once('../lib/ModuleUtility.php'); /* Depends: UserInterface */
+include_once('../lib/TemplateUtility.php'); /* Depends: ModuleUtility, Hooks */
 
 
 /* Give the session a unique name to avoid conflicts and start the session. */
@@ -94,7 +94,7 @@ if (get_magic_quotes_runtime())
 }
 if (get_magic_quotes_gpc())
 {
-    include_once('./lib/ArrayUtility.php');
+    include_once('../lib/ArrayUtility.php');
 
     $_GET     = array_map('stripslashes_deep', $_GET);
     $_POST    = array_map('stripslashes_deep', $_POST);

@@ -72,6 +72,6 @@
 <!-- FOOTER -->
 <?php echo($this->template['Footer']); ?>
 
-<script type="text/javascript">st_init();</script>
+
 </body>
 </html>

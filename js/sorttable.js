@@ -450,5 +450,4 @@ function st_sort_default(a, b)
     return 1;
 }
 
-addEvent(window, 'load', st_init, true);
 addEvent(window, 'unload', EventCache.flush, false);

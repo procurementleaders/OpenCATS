@@ -33,6 +33,6 @@
         <span style="font-size: 9px;">Powered by</span> <a style="color: #888; position: relative; font-size: 9px; font-weight: normal; text-align: center; left: 0px; top: 0px;" href="http://www.catsone.com/" target="_blank">CATS</a>.
 
     </div>
-    <script type="text/javascript">st_init();</script>
+
     </body>
 </html>

@@ -37,7 +37,8 @@
         }
 
         .h1-style, h1 {
-            font-size: 2.75rem
+            font-size: 2.75rem;
+            margin-bottom: .9375rem;
         }
 
         .h2-style, h2 {

@@ -4,7 +4,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=<?php echo(HTML_ENCODING); ?>"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css?family=PT+Serif|Roboto:300,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,700|Roboto:400,700" rel="stylesheet">
     <link rel="shortcut icon" href="https://d38pwt70f9bn29.cloudfront.net/AcuCustom/Sitename/Icon/Favorite/favicon-v2.ico" />
     <title><?php $this->_($this->siteName); ?> - Careers</title>
     <script type="text/javascript" src="../js/careerPortalApply.js"></script>

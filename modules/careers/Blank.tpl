@@ -7,17 +7,7 @@
     <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,700|Roboto:300,400,700" rel="stylesheet">
     <link rel="shortcut icon" href="https://d38pwt70f9bn29.cloudfront.net/AcuCustom/Sitename/Icon/Favorite/favicon-v2.ico" />
     <title><?php $this->_($this->siteName); ?> - Careers</title>
-    <script type="text/javascript" src="../js/careerPortalApply.js"></script>
-    <?php global $careerPage;
-    if (isset($careerPage) && $careerPage == true): ?>
-        <script type="text/javascript" src="../js/lib.js"></script>
-        <script type="text/javascript" src="../js/calendarDateInput.js"></script>
-    <?php else: ?>
-        <script type="text/javascript" src="js/lib.js"></script>
-        <script type="text/javascript" src="js/sorttable.js"></script>
-        <script type="text/javascript" src="js/calendarDateInput.js"></script>
-        <script type="text/javascript" src="js/careersPage.js"></script>
-    <?php endif; ?>
+
     <style type="text/css" media="all">
         html {
             font-size: 16px;
@@ -72,7 +62,17 @@
 </main>
 <!-- FOOTER -->
 <?php echo($this->template['Footer']); ?>
-
+<script type="text/javascript" src="../js/careerPortalApply.js"></script>
+<?php global $careerPage;
+if (isset($careerPage) && $careerPage == true): ?>
+    <script type="text/javascript" src="../js/lib.js"></script>
+    <script type="text/javascript" src="../js/calendarDateInput.js"></script>
+<?php else: ?>
+    <script type="text/javascript" src="js/lib.js"></script>
+    <script type="text/javascript" src="js/sorttable.js"></script>
+    <script type="text/javascript" src="js/calendarDateInput.js"></script>
+    <script type="text/javascript" src="js/careersPage.js"></script>
+<?php endif; ?>
 
 </body>
 </html>

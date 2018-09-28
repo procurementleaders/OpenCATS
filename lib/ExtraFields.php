@@ -671,7 +671,7 @@ class ExtraFields
                     {
                         if ($option != '')
                         {
-                           $extraFields[$index]['addHTML'] .= '<input type="radio" name="extraField'.$index.'" value="'.htmlspecialchars(urldecode($option)).'">'.htmlspecialchars(urldecode($option)).'<br \>';
+                           $extraFields[$index]['addHTML'] .= '<label for="extraField'.$index.'"><input type="radio" id="extraField'.$index.'" name="extraField'.$index.'" value="'.htmlspecialchars(urldecode($option)).'">'.htmlspecialchars(urldecode($option)).'</label>';
                         }
                     }
                 break;

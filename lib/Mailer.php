@@ -206,8 +206,7 @@ class Mailer
 
             if ($signature)
             {
-                $body .= "\n<br />\n<br /><span style=\"font-size: 10pt;\">Powered by <a href=\"http://www.catsone.com\" alt=\"CATS "
-                    . "Applicant Tracking System\">CATS</a> (Free ATS)</span>";
+                $body .= "";
             }
 
             $this->_mailer->Body = '<div style="font: normal normal 12px Arial, Tahoma, sans-serif">'

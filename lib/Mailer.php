@@ -219,7 +219,7 @@ class Mailer
         {
             if ($signature)
             {
-                $body .= "\n\nPowered by CATS (http://www.catsone.com) Free ATS";
+                $body .= "";
             }
 
             $this->_mailer->isHTML(false);

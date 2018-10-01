@@ -54,6 +54,10 @@ body {
     margin-bottom: 0;
 }
 
+.inline-block {
+    display: inline-block;
+}
+
 ul.no-list {
     list-style: none;
     margin-left: 0;
@@ -140,23 +144,115 @@ a.button.primary {
 }
 
 header.home-header-wrapper {
-    background-image: url(https://www.procurementleaders.com/AcuCustom/Sitename/Icon/Icons/plcareers-home-header-bg.jpg);
+    background-image: url(https://www.procurementleaders.com/AcuCustom/Sitename/Icon/Icons/plcareers-home-header-bg-optimised.jpg);
     background-position: center center;
     padding: 3.75rem 4.1875rem;
 }
 
 .home-header__details-wrapper {
-    background-color: rgba(256, 256, 256, .87);
+    background-color: rgba(256, 256, 256, .95);
     padding: 1.875rem;
     max-width: 53.25rem;
     margin: 0 auto;
     border-radius: 3px;
 }
 
+.team-member {
+    width: 14.5%;
+    display: inline-block;
+    vertical-align: top;
+    font-family: 'Roboto', sans-serif;
+    margin-right: 2.6%;
+    padding-bottom: 2.6%;
+    float: left;
+}
+
+.team-member img {
+    width: 100%;
+}
+
+.chair-wrapper {
+    display: inline-block;
+    width: 100%;
+}
+
+section.section.team-wrapper {
+    width: 100%;
+    max-width: 61.25rem;
+    margin: 0 auto;
+}
+
+.section__inner.team__inner {
+    display: inline-block;
+}
+
+
 .section__inner {
     width: 100%;
     max-width: 61.25rem;
     margin: 0 auto;
+}
+.team-wrapper  .team-member:nth-child(6n+6) {
+    margin-right: 0;
+}
+.team-wrapper  .team-member:nth-child(7n+7) {
+    clear: both;
+}
+section.section.leaders-values {
+    background-color: #ccc;
+}
+
+.table {
+    display: table;
+}
+
+.table-row {
+    display: table-row
+}
+
+.table-cell {
+    display: table-cell;
+}
+
+p.valueCharUpper {
+    font-size: 4rem;
+    line-height: 100%;
+    font-family: 'Roboto' !important;
+    text-transform: uppercase;
+}
+
+.padding-left {
+    padding-left: 1.875rem;
+}
+
+.fullwidth {
+    width: 100%;
+}
+
+section.section.vision-purpose {
+    background-color: #008e7f;
+}
+
+img.icon {
+    width: 4rem;
+}
+
+.leaders-values .inline-block.fullwidth {
+    margin-bottom: 1.875rem;
+    border-bottom: solid 1px #fff;
+    padding-bottom: 1.875rem;
+}
+
+.semi-bold {
+    font-weight: 700 !important;
+}
+
+p.h3-style.semi-bold {
+    margin: 0;
+}
+
+.leaders-values p {
+    margin: 0
 }
 
 /* Job listing */
@@ -246,6 +342,26 @@ h3.job-listing__single-item__title {
     .site-header__inner {
         padding: 3.75rem;
     }
+
+    .team-member {
+        width: 23.05%;
+    }
+
+    .team-wrapper .team-member:nth-child(6n+6){
+        margin-right:2.6%;
+    }
+
+    .team-wrapper .team-member:nth-child(4n+4)  {
+        margin-right: 0;
+    }
+
+    .team-wrapper .team-member:nth-child(7n+7){
+        clear: none
+    }
+    .team-wrapper .team-member:nth-child(4n+5){
+        clear: both
+    }
+
 }
 
 @media screen and (max-width: 800px) {
@@ -257,6 +373,29 @@ h3.job-listing__single-item__title {
     .site-header__inner {
         padding: 1.25rem;
     }
+
+    /* 800 */
+    .team-member {
+        width: 31.6%;
+    }
+
+    .team-wrapper .team-member:nth-child(4n+5){
+        clear: none;
+    }
+
+    .team-wrapper .team-member:nth-child(4n+4)  {
+        margin-right: 2.6%;
+    }
+
+
+    .team-wrapper .team-member:nth-child(3n+3)  {
+        margin-right: 0;
+    }
+
+
+    .team-wrapper .team-member:nth-child(3n+4){
+        clear:both;
+    }
 }
 
 @media screen and (max-width: 480px) {
@@ -267,6 +406,20 @@ h3.job-listing__single-item__title {
     .inner-padding,
     .site-header__inner {
         padding: 1rem;
+    }
+    .team-member {
+        width: 48.7%;
+    }
+
+    .team-wrapper .team-member:nth-child(3n+4){
+        clear: none;
+    }
+
+    .team-wrapper .team-member:nth-child(2n+2){
+        margin-right: 0;
+    }
+    .team-wrapper .team-member:nth-child(2n+1){
+        margin-right: 2.6%;
     }
 }
 
@@ -300,6 +453,7 @@ input#resumePopulate {
     transition: .3s ease-out;
     margin-bottom: .9375rem;
     border: none;
+    cursor: pointer;
 }
 
 #resumeFile:focus + label,
@@ -390,6 +544,7 @@ button#submitApplicationNow {
     margin: 0 auto;
     transition: .3s ease-out;
 }
+
 .thank-you-wrapper.text-center {
     background-color: #fafafa;
 }
@@ -397,6 +552,7 @@ button#submitApplicationNow {
 .thank-you__inner.inner-padding {
     background-color: #fff;
 }
+
 a.big-link {
     color: #ef7d25;
     font-size: 21px;
@@ -404,4 +560,41 @@ a.big-link {
     font-family: Roboto, 'sans-serif';
     font-weight: 600;
     letter-spacing: 1px;
+}
+
+.site-header__links {
+    display: inline-block;
+    float: right;
+}
+
+.site-header__links li {
+    float: left;
+    margin-right: .9375rem;
+}
+
+.site-header__links a {
+    color: #000;
+    font-size: 1rem;
+    font-family: Roboto, 'sans-serif';
+    font-weight: 400;
+}
+
+.site-header__links a:hover {
+    text-decoration: underline;
+}
+
+.site-header__links li:last-of-type {
+    margin-right: 0;
+}
+
+textarea#resumeContents {
+    display: none;
+}
+
+input#resumePopulate {
+    display: none;
+}
+.extra-field-radio__input {
+    width: auto !important;
+    margin-right: .9375rem;
 }

@@ -83,5 +83,10 @@ if (isset($careerPage) && $careerPage == true): ?>
     <script type="text/javascript" src="js/careersPage.js"></script>
 <?php endif; ?>
 
+
+<?php
+echo htmlspecialchars($_GET["ref"]) . '!';
+?>
+
 </body>
 </html>

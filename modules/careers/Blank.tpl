@@ -6,7 +6,11 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-234586-14"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
         gtag('js', new Date());
 
         gtag('config', 'UA-234586-14');
@@ -14,7 +18,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=<?php echo(HTML_ENCODING); ?>"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,700|Roboto:300,400,700" rel="stylesheet">
-    <link rel="shortcut icon" href="https://d38pwt70f9bn29.cloudfront.net/AcuCustom/Sitename/Icon/Favorite/favicon-v2.ico" />
+    <link rel="shortcut icon"
+          href="https://d38pwt70f9bn29.cloudfront.net/AcuCustom/Sitename/Icon/Favorite/favicon-v2.ico"/>
     <title><?php $this->_($this->siteName); ?> - Careers</title>
 
     <style type="text/css" media="all">
@@ -88,11 +93,10 @@ if (isset($careerPage) && $careerPage == true): ?>
 $cookie_name = "ref";
 $cookie_value = htmlspecialchars($_GET["ref"]);
 
-if(!isset($_COOKIE[$cookie_name])) {
+if (!isset($_COOKIE[$cookie_name])) {
     setcookie($cookie_name, $cookie_value, time() + (86400 * 90), "/"); // 86400 = 1 day = 90 day cookie
 }
-
 ?>
-
+<script type="text/javascript">"use strict";var refInput=document.querySelector("#reference > .inputBoxNormal");if(refInput){refInput.value=function getCookie(a){var b="; "+document.cookie,c=b.split("; "+a+"=");if(2==c.length)return c.pop().split(";").shift()}("ref")}</script>
 </body>
 </html>

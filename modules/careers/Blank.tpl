@@ -85,7 +85,15 @@ if (isset($careerPage) && $careerPage == true): ?>
 
 
 <?php
-echo htmlspecialchars($_GET["ref"]) . '!';
+$cookie_name = "ref";
+$cookie_value = htmlspecialchars($_GET["ref"]);
+
+
+setcookie($cookie_name, $cookie_value, time() + (86400 * 90), "/"); // 86400 = 1 day = 90 day cookie
+
+
+
+
 ?>
 
 </body>

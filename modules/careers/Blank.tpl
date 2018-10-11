@@ -61,7 +61,12 @@
             font-family: 'PT Serif', serif;
             font-size: 1rem
         }
-
+        .hidden {
+            width: 0;
+            height: 0;
+            position: absolute;
+            left: -1000px;
+        }
         <?php echo($this->template['CSS']); ?>
 
     </style>

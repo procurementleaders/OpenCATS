@@ -1,7 +1,9 @@
 <div class="apply-wrapper">
     <div class="apply__inner inner-padding">
         <h1 class="no-margin-top">Submit your application</h1>
-        <h3>You are applying for the <em><title></em> position at Procurement Leaders.</h3>
+        <h3>You are applying for the <em>
+                <title>
+            </em> position at Procurement Leaders.</h3>
 
         <div class="apply__form-wrapper">
             <div class="apply__form-inner">
@@ -11,7 +13,7 @@
                 <input-resumeUploadPreview>
 
 
-                    <h3>Tell us about yourself</h3>
+                    <!-- <h3>Tell us about yourself</h3> -->
                     <p class="instructions">All fields marked with asterisk (*) are required.</p>
 
                     <div class="field-group-wrapper">
@@ -39,7 +41,7 @@
                     </div>
 
 
-                    <h3>How should we contact you?</h3>
+                    <!-- <h3>How should we contact you?</h3> -->
 
                     <div class="field-group-wrapper">
                         <label id="homePhoneLabel" for="homePhone">Phone number:</label>
@@ -48,14 +50,15 @@
                     </div>
 
                     <div class="field-group-wrapper">
-                        <label id="bestTimeLabel" for="bestTime"><span class="required-field">*</span>Best time to call:</label>
+                        <label id="bestTimeLabel" for="bestTime"><span class="required-field">*</span>Best time to
+                            call:</label>
 
                         <input-best-time-to-call>
                     </div>
 
                     <div class="field-group-wrapper">
-                        <label id="cityProvinceLabel"
-                               for="cityProvince"><span class="required-field">*</span>City/Province:</label>
+                        <label id="cityProvinceLabel" for="cityProvince"><span
+                                class="required-field">*</span>City/Province:</label>
 
                         <input-city>
                     </div>
@@ -70,13 +73,10 @@
                     </div>
 
 
-                    <button
-                            onmouseover="buttonMouseOver('submitApplicationNow',true)"
-                            onmouseout="buttonMouseOver('submitApplicationNow',false)"
-                            style="cursor: pointer;"
-                            id="submitApplicationNow"
-                            class="button main"
-                            onclick="if (applyValidate()) { document.applyToJobForm.submit(); }">SUBMIT APPLICATION
+                    <button onmouseover="buttonMouseOver('submitApplicationNow',true)"
+                        onmouseout="buttonMouseOver('submitApplicationNow',false)" style="cursor: pointer;"
+                        id="submitApplicationNow" class="button main"
+                        onclick="if (applyValidate()) { document.applyToJobForm.submit(); }">SUBMIT APPLICATION
                     </button>
 
 

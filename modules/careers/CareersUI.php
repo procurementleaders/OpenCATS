@@ -997,6 +997,8 @@ class CareersUI extends UserInterface
         return $validator;
     }
 
+    
+
     /*
      * Gets HTML content for the job order response array.
      */
@@ -1004,46 +1006,91 @@ class CareersUI extends UserInterface
     private function getResultsTable($rs, $settings, $unformatted = false, $parameters = '')
     {
 
-        $html = '<div class="job-listing-wrapper">';
+        if(!function_exists("filter_multidimensional_array")){
+            function filter_multidimensional_array($array, $key) { 
+                $temp_array = array(); 
+                $i = 0; 
+                $key_array = array(); 
+                
+                foreach($array as $val) { 
+                    if (!in_array($val[$key], $key_array)) { 
+                        if($val[$key]!=NULL){
+                            $key_array[$i] = $val[$key]; 
+                            $temp_array[$i] = $val[$key]; 
+                        }
+                    } 
+                    $i++; 
+                }
+                return $temp_array; 
+            }
+        }
+
+        
+        $departments_once = filter_multidimensional_array($rs, "departmentName");
+        $locations_once = filter_multidimensional_array($rs, "city");
+        $html = '<h2 class="style-h2">I\'m looking for a ';
+        $html .= '<select name="department">';
+        $html .= '<option value="all-departments">any department</option>';
+        foreach ($departments_once as $index => $line) {
+            $html .= '<option value="'. $line .'">'. $line.'</option>';
+        }
+        $html .= '</select>';
+        $html .= ' role in ';
+        $html .= '<select name="location">';
+        $html .= '<option value="all-locations">any location</option>';
+        foreach ($locations_once as $index => $line) {
+            $html .= '<option value="'. $line  .'">'. $line .'</option>';
+        }
+        $html .= '</select>';
+        $html .= '</h2> ';
+        
+        $html .= '<div class="job-listing-wrapper">';
         $html .= '<div class="job-listing__inner">';
         foreach ($rs as $index => $line) {
-            $html .= '<a href="' . CATSUtility::getIndexName() . '?m=careers' . (isset($_GET['templateName']) ? '&amp;templateName=' . urlencode($_GET['templateName']) : '') . '&amp;p=showJob&amp;ID=' . $line['jobOrderID'] . '">';
-            $html .= '<article class="job-listing__single-item-wrapper">';
 
+            $html .= '<a data-location="'.htmlspecialchars($line['city']).'" data-department="'. htmlspecialchars($line['departmentName']).'" class="job-listing__single-link"  id="single-job__'.$line['jobOrderID'].'" href="' . CATSUtility::getIndexName() . '?m=careers' . (isset($_GET['templateName']) ? '&amp;templateName=' . urlencode($_GET['templateName']) : '') . '&amp;p=showJob&amp;ID=' . $line['jobOrderID'] . '">';
+            
+            $html .= '<article class="job-listing__single-item-wrapper">';
             $html .= '<div class="job-listing__single-item__inner">';
 
+            // Job Location
             $html .= '<p class="job-listing__single-item__location-department">';
-            $html .= '<span class="job-listing__single-item__location">';
-            $html .= htmlspecialchars($line['city']) . ', ' . htmlspecialchars($line['state']);
-            $html .= '</span>';
-
+                $html .= '<span class="job-listing__single-item__location">';
+                if(htmlspecialchars($line['city'])==="Singapore"){
+                    $html .= htmlspecialchars($line['city']);
+                }else{
+                    $html .= htmlspecialchars($line['city']) . ', ' . htmlspecialchars($line['state']);
+                }
+                $html .= '</span>';
             $html .= '</p>';
 
-            $html .= '<h3 class="job-listing__single-item__title">';
+            // Job Title
+            $html .= '<h3 class="job-listing__single-item__title">'.htmlspecialchars($line['title']).'</h3>';
 
-            $html .= htmlspecialchars($line['title']);
-
-            $html .= '</h3>';
-
-
+            // Job Description
             $html .= '<p class="job-listing__single-item__teaser">';
             $site = new Site(-1);
             $siteID = $site->getFirstSiteID();
-
             $jobOrders = new JobOrders($siteID);
-
             $extraFieldsForJobOrders = $jobOrders->extraFields->getValuesForShow($line['jobOrderID']);
-
             $html .= $extraFieldsForJobOrders[0]['display'];
-
             $html .= '</p>';
 
+            // Job Department
+            if(htmlspecialchars($line['departmentName']) != NULL){
+                $html .= '<span class="job-listing__single-item__department">';
+                $html .= htmlspecialchars($line['departmentName']);
+                $html .= '</span>';
+            }
+            
             $html .= '</div>';
             $html .= '</article>';
             $html .= '</a>';
         }
-
         $html .= '</div>';
+        $html .= '<div id="error-job" class="hide-error"><p>No Job matches the filters!</p> <button id="reset-job">Reset Filters</button></div>';
+        $html .= '<script src="./js/filterJobs.js"></script>';
+
         return $html;
     }
 

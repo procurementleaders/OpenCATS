@@ -1,28 +1,32 @@
 <div class="job-detail-wrapper">
-    <div class="job-detail__inner inner-padding">
+    <div class="job-detail__inner inner-padding" itemscope itemtype="http://schema.org/JobPosting">
         <header class="job-detail__header">
-            <h1 class="job-detail__detail no-margin-top"><title></h1>
+            <h1 class="job-detail__detail no-margin-top" itemprop="title">
+                <title>
+            </h1>
 
-            <address>
-                <city>,
-                    <state>
-            </address>
-
+            <div itemprop="jobLocation" itemscope itemtype="http://schema.org/Place">
+                <address itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                    <span itemprop="addressLocality">
+                        <city>, <state>
+                    </span>
+                </address>
+            </div>
         </header>
 
         <div class="job-detail__apply-wrapper">
             <a-applyToJob class="button primary" aria-label="Apply for position">APPLY NOW</a>
         </div>
 
-        <div class="job-detail__description">
-
+        <div class="job-detail__description" itemprop="description">
             <description>
-
         </div>
-
 
         <div class="job-detail__apply-wrapper">
             <a-applyToJob class="button primary" aria-label="Apply for position">APPLY NOW</a>
         </div>
     </div>
 </div>
+
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5c6fe4ea576a3de5"></script>

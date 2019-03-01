@@ -204,7 +204,7 @@ class CareersUI extends UserInterface
             $content = str_replace('<input-firstName>', '<input name="firstName" id="firstName" class="inputBoxName" value="' . $candidate['firstName'] . '" />', $content);
             $content = str_replace('<input-lastName>', '<input name="lastName" id="lastName" class="inputBoxName" value="' . $candidate['lastName'] . '" />', $content);
             $content = str_replace('<input-address>', '<textarea name="address" class="inputBoxArea">' . $candidate['address'] . '</textarea>', $content);
-            $content = str_replace('<input-city>', '<input name="city" id="city" class="inputBoxNormal" value="' . $candidate['city'] . '" />', $content);
+            $content = str_replace('<input-city>', '<input name="city" id="city" class="inputBoxNormal" value="' . $candidate['city'] . '" required />', $content);
             $content = str_replace('<input-state>', '<input name="state" id="state" class="inputBoxNormal" value="' . $candidate['state'] . '" />', $content);
             $content = str_replace('<input-zip>', '<input name="zip" id="zip" class="inputBoxNormal" value="' . $candidate['zip'] . '" />', $content);
             $content = str_replace('<input-phoneWork>', '<input name="phoneWork" id="phoneWork" class="inputBoxNormal" value="' . $candidate['phoneWork'] . '" />', $content);
@@ -530,38 +530,37 @@ class CareersUI extends UserInterface
             /* Replace input fields. */
             $template['Content'] = str_replace('<jobid>', $jobID, $template['Content']);
             $template['Content'] = str_replace('<title>', $jobOrderData['title'], $template['Content']);
-            $template['Content'] = str_replace('<input-firstName>', '<input placeholder="Your first name" name="firstName" id="firstName" class="inputBoxName" value="' . $firstName . '" />', $template['Content']);
-            $template['Content'] = str_replace('<input-lastName>', '<input placeholder="Your last name"  name="lastName" id="lastName" class="inputBoxName" value="' . $lastName . '" />', $template['Content']);
+            $template['Content'] = str_replace('<input-firstName>', '<input placeholder="Your first name" name="firstName" id="firstName" class="inputBoxName validate-input" value="' . $firstName . '" required />', $template['Content']);
+            $template['Content'] = str_replace('<input-lastName>', '<input placeholder="Your last name"  name="lastName" id="lastName" class="inputBoxName validate-input" value="' . $lastName . '" required />', $template['Content']);
             $template['Content'] = str_replace('<input-address>', '<textarea name="address" class="inputBoxArea">' . $address . '</textarea>', $template['Content']);
-            $template['Content'] = str_replace('<input-city>', '<input name="city" id="city" class="inputBoxNormal" value="' . $city . '" />', $template['Content']);
-            $template['Content'] = str_replace('<input-state>', '<input name="state" id="state" class="inputBoxNormal" value="' . $state . '" />', $template['Content']);
-            $template['Content'] = str_replace('<input-zip>', '<input name="zip" id="zip" class="inputBoxNormal" value="' . $zip . '" />', $template['Content']);
-            $template['Content'] = str_replace('<input-phone>', '<input name="phone" id="phone" class="inputBoxNormal" value="' . $phone . '" />', $template['Content']);
-            $template['Content'] = str_replace('<input-email>', '<input placeholder="Your email address" name="email" type="email" name="Your email address" id="email" class="inputBoxNormal" value="' . $email . '" />', $template['Content']);
-            $template['Content'] = str_replace('<input-phone-home>', '<input type="tel" placeholder="Your phone number" name="phoneHome" id="phoneHome" class="inputBoxNormal" value="' . $phoneHome . '" />', $template['Content']);
-            $template['Content'] = str_replace('<input-phone-cell>', '<input name="phoneCell" id="phoneCell" class="inputBoxNormal" value="' . $phoneCell . '" />', $template['Content']);
+            $template['Content'] = str_replace('<input-city>', '<input name="city" id="city" class="inputBoxNormal validate-input" value="' . $city . '" />', $template['Content']);
+            $template['Content'] = str_replace('<input-state>', '<input name="state" id="state" class="inputBoxNormal validate-input" value="' . $state . '" />', $template['Content']);
+            $template['Content'] = str_replace('<input-zip>', '<input name="zip" id="zip" class="inputBoxNormal validate-input" value="' . $zip . '" />', $template['Content']);
+            $template['Content'] = str_replace('<input-phone>', '<input name="phone" id="phone" class="inputBoxNorma validate-inputl" value="' . $phone . '" />', $template['Content']);
+            $template['Content'] = str_replace('<input-email>', '<input placeholder="Your email address" name="email" type="email" name="Your email address" id="email" class="inputBoxNormal validate-input" value="' . $email . '" required />', $template['Content']);
+            $template['Content'] = str_replace('<input-phone-home>', '<input type="tel" placeholder="Your phone number" name="phoneHome" id="phoneHome" class="inputBoxNormal validate-input" value="' . $phoneHome . '" />', $template['Content']);
+            $template['Content'] = str_replace('<input-phone-cell>', '<input name="phoneCell" id="phoneCell" class="inputBoxNormal validate-input" value="' . $phoneCell . '" />', $template['Content']);
             $template['Content'] = str_replace('<input-best-time-to-call>', '<input placeholder="What time should we call you?" name="bestTimeToCall" id="bestTimeToCall" class="inputBoxNormal" value="' . $bestTimeToCall . '" />', $template['Content']);
-            $template['Content'] = str_replace('<input-email2>', '<input name="email2" id="email2" class="inputBoxNormal" value="' . $email2 . '" />', $template['Content']);
-            $template['Content'] = str_replace('<input-emailconfirm>', '<input type="email" placeholder="Confirm your email address" name="emailconfirm" id="emailconfirm" class="inputBoxNormal" value="' . $emailconfirm . '" />', $template['Content']);
+            $template['Content'] = str_replace('<input-email2>', '<input name="email2" id="email2" class="inputBoxNormal validate-input" value="' . $email2 . '" />', $template['Content']);
+            $template['Content'] = str_replace('<input-emailconfirm>', '<input type="email" placeholder="Confirm your email address" name="emailconfirm" id="emailconfirm" class="inputBoxNormal validate-input" value="' . $emailconfirm . '" required />', $template['Content']);
             $template['Content'] = str_replace('<input-keySkills>', '<input placeholder="A list of your key skills" name="keySkills" id="keySkills" class="inputBoxNormal" value="' . $keySkills . '" />', $template['Content']);
             $template['Content'] = str_replace('<input-source>', '<input name="source" id="source" class="inputBoxNormal" value="' . $source . '" />', $template['Content']);
             $template['Content'] = str_replace('<input-employer>', '<input name="employer" id="employer" class="inputBoxNormal" value="' . $employer . '" />', $template['Content']);
             $template['Content'] = str_replace('<input-resumeUpload>', '<input type="file" id="resume" name="file" class="inputBoxFile" />', $template['Content']);
             $template['Content'] = str_replace('<input-resumeUploadPreview>',
-                '<input type="hidden" id="applyToJobSubAction" name="applyToJobSubAction" value="" /> '
-                . '<input type="hidden" id="file" name="file" value="' . $resumeFileLocation . '" /> '
-                . '<input type="file" id="resumeFile" name="resumeFile" class="inputBoxFile" size="30" onchange="resumeLoadCheck();" /> '
-                . '<label for="resumeFile">Choose your CV file</label>'
-                . '<input type="button" id="resumeLoad" name="resumeLoad" value="Upload your CV" onclick="resumeLoadFile();" disabled /><br /> '
-                . $attachmentHTML
-                . '<textarea id="resumeContents" name="resumeContents" class="inputBoxArea" onmousemove="resumeContentsChange(this);" '
-                . 'onchange="resumeContentsChange(this);" onmousedown="resumeContentsChange(this);" '
-                . 'style="width: 100%; height: 150px;">' . $resumeContents . '</textarea><br /> '
+                '<div class="field-group-wrapper">'
+                    . '<input type="file" id="file" name="file" size="30" accept=".pdf,.doc,.docx,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" class="validate-input" /> '
+                    . '<label id="UploadCVLabel" for="file">*Upload your CV</label>'
+                    .'<p id="ErrorFile" class="hide-error"></p><p class="cv-instruction">(Accepted files: .doc,.docs,.pdf; Max size: 2Mb)</p>'
+                    . $attachmentHTML
+                    . '<br />'
+                    .'<label id="resumeContentsLabel" for="resumeContents">Tell us something about yourself: (optional)</label>'
+                    .'<textarea id="resumeContents" name="resumeContents" class="inputBoxArea validate-input">' . $resumeContents . '</textarea> '
+                .'</div>'
                 . (
                     // If parsing is enabled, add the image link for it
                 LicenseUtility::isParsingEnabled() ?
-                    '<br /><div style="text-align: right;">'
-                    . '<input type="button" value="Populate Fields ->" id="resumePopulate" onclick="resumeParse();" ' . (strlen($resumeContents) ? '' : 'disabled') . ' /></div>'
+                    ''
                     :
                     ''
                 ),
@@ -994,7 +993,7 @@ class CareersUI extends UserInterface
         $validator = '<script type="text/javascript">function applyValidate() {'
             . $validator . ' return true; }' . "\n" . '</script>';
 
-        return $validator;
+        //return $validator;
     }
 
     
@@ -1128,9 +1127,8 @@ class CareersUI extends UserInterface
         $phoneCell = $this->getTrimmedInput('phoneCell', $_POST);
         $bestTimeToCall = $this->getTrimmedInput('bestTimeToCall', $_POST);
         $keySkills = $this->getTrimmedInput('keySkills', $_POST);
-        $extraNotes = $this->getTrimmedInput('extraNotes', $_POST);
+        $extraNotes = strip_tags($this->getTrimmedInput('resumeContents', $_POST)); //extraNotes
         $employer = $this->getTrimmedInput('employer', $_POST);
-
         $gender = $this->getTrimmedInput('eeogender', $_POST);
         $race = $this->getTrimmedInput('eeorace', $_POST);
         $veteran = $this->getTrimmedInput('eeoveteran', $_POST);
@@ -1217,7 +1215,7 @@ class CareersUI extends UserInterface
                 '',
                 '',
                 '',
-                'Candidate submitted these notes with first application: '
+                'Letter of presentation: '
                 . "\n\n" . $extraNotes,
                 '',
                 $bestTimeToCall,

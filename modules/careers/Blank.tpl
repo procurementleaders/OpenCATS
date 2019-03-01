@@ -83,8 +83,11 @@
     <?php echo($this->template['Content']); ?>
 </main>
 <!-- FOOTER -->
+
 <?php echo($this->template['Footer']); ?>
-<script type="text/javascript" src="../js/careerPortalApply.js"></script>
+
+<!--
+<script type="text/javascript" src="js/careerPortalApply.js"></script>
 <?php global $careerPage;
 if (isset($careerPage) && $careerPage == true): ?>
     <script type="text/javascript" src="../js/lib.js"></script>
@@ -94,47 +97,64 @@ if (isset($careerPage) && $careerPage == true): ?>
     <script type="text/javascript" src="js/sorttable.js"></script>
     <script type="text/javascript" src="js/calendarDateInput.js"></script>
     <script type="text/javascript" src="js/careersPage.js"></script>
-<?php endif; ?>
+<?php endif; ?> -->
 
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script type="text/javascript" src="js/slick.min.js"></script>
-<script type="text/javascript">
-$(document).ready(function () {
-    if($('.carousel-logos').length>0){
-        // Set up carousel with logos
-        $('.carousel-logos').slick({
-            speed: 9000,
-            autoplay: true,
-            autoplaySpeed: 0,
-            centerMode: true,
-            cssEase: 'linear',
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            variableWidth: true,
-            infinite: true,
-            initialSlide: 1,
-            arrows: false,
-            buttons: false
-        });
-    }
-});
-</script>
+
+
+<?php if(!isset($_GET["p"])){
+    // career homepage scripts
+?>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="js/slick.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+        if($('.carousel-logos').length>0){
+            // Set up carousel with logos
+            $('.carousel-logos').slick({
+                speed: 9000,
+                autoplay: true,
+                autoplaySpeed: 0,
+                centerMode: true,
+                cssEase: 'linear',
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                variableWidth: true,
+                infinite: true,
+                initialSlide: 1,
+                arrows: false,
+                buttons: false
+            });
+        }
+    });
+    </script>
+<?php }elseif($_GET["p"] === "showAll"){
+    // career job listing page scripts
+?>
+    <script type="text/javascript" src="js/filterJobs.js"></script>
+<?php }elseif($_GET["p"] === "showJob"){
+    // career single job page scripts
+?>
+<?php }elseif($_GET["p"] === "applyToJob"){
+    // career apply To Job page scripts
+?>
+    <script type="text/javascript" src="js/careerPortalApply.js"></script>
+<?php } ?>
 
 <?php
-$cookie_name = "ref";
-if (!isset($_GET["ref"])) {
-    /* if url does not contain ref variable */
+    /* PHP Script to set cookies: */
+    $cookie_name = "ref";
+    if (!isset($_GET["ref"])) {
+        // if url does not contain ref variable
 
-}else{
-    /* if url contains ref variable */
+    }else{
+        // if url contains ref variable
 
-    if(!isset($_COOKIE[$cookie_name])){
-        /* set the cookie ref if does not exist*/
-        $cookie_value = htmlspecialchars($_GET["ref"]);
-        setcookie($cookie_name, $cookie_value, time() + (86400 * 90), "/"); // 86400 = 1 day = 90 day cookie
+        if(!isset($_COOKIE[$cookie_name])){
+            // set the cookie ref if does not exist
+            $cookie_value = htmlspecialchars($_GET["ref"]);
+            setcookie($cookie_name, $cookie_value, time() + (86400 * 90), "/"); // 86400 = 1 day = 90 day cookie
+        }
     }
 ?>
-    <script type="text/javascript">"use strict";var refInput=document.querySelector("#reference > .inputBoxNormal");if(refInput){refInput.value=function getCookie(a){var b="; "+document.cookie,c=b.split("; "+a+"=");if(2==c.length)return c.pop().split(";").shift()}("ref")}</script>
-<?php } ?>
 </body>
 </html>

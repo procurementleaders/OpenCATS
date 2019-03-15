@@ -1049,12 +1049,12 @@ class CareersUI extends UserInterface
 
             $html .= '<a data-location="'.htmlspecialchars($line['city']).'" data-department="'. htmlspecialchars($line['departmentName']).'" class="job-listing__single-link"  id="single-job__'.$line['jobOrderID'].'" href="' . CATSUtility::getIndexName() . '?m=careers' . (isset($_GET['templateName']) ? '&amp;templateName=' . urlencode($_GET['templateName']) : '') . '&amp;p=showJob&amp;ID=' . $line['jobOrderID'] . '">';
             
-            $html .= '<article class="job-listing__single-item-wrapper">';
+            $html .= '<article itemscope itemtype="http://schema.org/JobPosting" class="job-listing__single-item-wrapper">';
             $html .= '<div class="job-listing__single-item__inner">';
 
             // Job Location
             $html .= '<p class="job-listing__single-item__location-department">';
-                $html .= '<span class="job-listing__single-item__location">';
+                $html .= '<span itemprop="jobLocation" itemscope itemtype="http://schema.org/Place" class="job-listing__single-item__location">';
                 if(htmlspecialchars($line['city'])==="Singapore"){
                     $html .= htmlspecialchars($line['city']);
                 }else{
@@ -1064,7 +1064,7 @@ class CareersUI extends UserInterface
             $html .= '</p>';
 
             // Job Title
-            $html .= '<h3 class="job-listing__single-item__title">'.htmlspecialchars($line['title']).'</h3>';
+            $html .= '<h3  itemprop="title" class="job-listing__single-item__title">'.htmlspecialchars($line['title']).'</h3>';
 
             // Job Description
             $html .= '<p class="job-listing__single-item__teaser">';
@@ -1077,7 +1077,7 @@ class CareersUI extends UserInterface
 
             // Job Department
             if(htmlspecialchars($line['departmentName']) != NULL){
-                $html .= '<span class="job-listing__single-item__department">';
+                $html .= '<span itemprop="industry" class="job-listing__single-item__department">';
                 $html .= htmlspecialchars($line['departmentName']);
                 $html .= '</span>';
             }

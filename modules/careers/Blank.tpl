@@ -17,6 +17,9 @@
     </script>
     <meta http-equiv="Content-Type" content="text/html; charset=<?php echo(HTML_ENCODING); ?>"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <meta property="og:title" content="Procurement Leaders Careers" />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="https://careers.procurementleaders.com" />
     <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,700|Roboto:300,400,700" rel="stylesheet">
     <link rel="shortcut icon"
           href="https://d38pwt70f9bn29.cloudfront.net/AcuCustom/Sitename/Icon/Favorite/favicon-v2.ico"/>

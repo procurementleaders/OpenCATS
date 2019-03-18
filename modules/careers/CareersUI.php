@@ -1027,14 +1027,14 @@ class CareersUI extends UserInterface
         
         $departments_once = filter_multidimensional_array($rs, "departmentName");
         $locations_once = filter_multidimensional_array($rs, "city");
-        $html = '<h2 class="style-h2"><span class="filter-text">I\'m looking for a </span>';
+        $html = '<h2 class="style-h2"><span class="filter-text-one">I\'m looking for a </span>';
         $html .= '<select name="department">';
         $html .= '<option value="all-departments">any department</option>';
         foreach ($departments_once as $index => $line) {
             $html .= '<option value="'. $line .'">'. $line.'</option>';
         }
         $html .= '</select>';
-        $html .= '<span class="filter-text"> role in </span>';
+        $html .= '<span class="filter-text-two"> role in </span>';
         $html .= '<select name="location">';
         $html .= '<option value="all-locations">any location</option>';
         foreach ($locations_once as $index => $line) {

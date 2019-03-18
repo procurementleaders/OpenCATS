@@ -874,3 +874,9 @@ ul.no-list.social-footer {
 .hide-error {
   display: none !important;
 }
+
+@media screen and (max-width: 600px) {
+  .job-listing-wrapper select {
+    width: 100%;
+  }
+}

@@ -1087,7 +1087,7 @@ class CareersUI extends UserInterface
             $html .= '</a>';
         }
         $html .= '</div>';
-        $html .= '<div id="error-job" class="hide-error"><p>No Job matches the filters!</p> <button id="reset-job">Reset Filters</button></div>';
+        $html .= '<div id="error-job" class="hide-error"><p>No job matches your filters, try choosing something else.</p> <button id="reset-job">Reset Filters</button></div>';
         $html .= '<script src="./js/filterJobs.js"></script>';
 
         return $html;

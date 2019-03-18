@@ -433,6 +433,7 @@ h3.job-listing__single-item__title {
 }
 .job-listing-wrapper {
   background: #f4f4f4;
+  width: 100%;
 }
 .job-listing-wrapper h2.style-h2 {
   text-align: center;
@@ -879,4 +880,8 @@ ul.no-list.social-footer {
   .job-listing-wrapper select {
     width: 100%;
   }
+}
+
+div#error-job {
+  text-align: center;
 }

@@ -527,6 +527,11 @@ class CareersUI extends UserInterface
                 $attachmentHTML = '';
             }
 
+            /* Replace url breadcrumbs */
+            // Url single job to add breadcrumbs
+            $singleJobUrl = "https://careers.procurementleaders.com/index.php?m=careers&p=showJob&ID=". $jobID;
+            $template['Content'] = str_replace('<singleJobUrl>', $singleJobUrl , $template['Content']);
+
             /* Replace input fields. */
             $template['Content'] = str_replace('<jobid>', $jobID, $template['Content']);
             $template['Content'] = str_replace('<title>', $jobOrderData['title'], $template['Content']);
@@ -756,6 +761,7 @@ class CareersUI extends UserInterface
             $template['Content'] = str_replace('<rate>', nl2br($jobOrderData['maxRate']), $template['Content']);
             $template['Content'] = str_replace('<salary>', nl2br($jobOrderData['salary']), $template['Content']);
             $template['Content'] = str_replace('<daysOld>', nl2br($jobOrderData['daysOld']), $template['Content']);
+
 
             $isRegistered = $this->isCandidateRegistered($siteID, $template['Content - Candidate Registration']);
 

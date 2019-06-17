@@ -1,106 +1,119 @@
-"use strict";
-(function () {
+'use strict';
+(function() {
+  // add event listener to form elements
+  document.addEventListener(
+    'DOMContentLoaded',
+    function() {
+      document.querySelector('form').onchange = allowSubmit;
+      document.getElementById('file').onchange = checkFile;
+    },
+    false
+  );
 
-    // add event listener to form elements
-    document.addEventListener('DOMContentLoaded', function () {
-        document.querySelector('form').onchange = allowSubmit;
-        document.getElementById("file").onchange = checkFile;
-    }, false);
+  function errorMessage(id, msg) {
+    var errorP = document.getElementById(id);
+    errorP.classList.add('show-error');
+    errorP.classList.remove('hide-error');
+    errorP.innerHTML = msg;
+  }
 
-    function errorMessage(id, msg) {
-        var errorP = document.getElementById(id);
-        errorP.classList.add("show-error");
-        errorP.classList.remove("hide-error");
-        errorP.innerHTML = msg;
+  function removeErrorMessage(id) {
+    var errorP = document.getElementById(id);
+    errorP.classList.add('hide-error');
+    errorP.classList.remove('show-error');
+  }
+
+  function allowSubmit() {
+    // if all inputs have some value abilitate submit button
+    var radioYes = document.getElementById('extraField-1__Yes'),
+      radioNo = document.getElementById('extraField-1__No');
+
+    var firstName = document.getElementById('firstName').value,
+      lastName = document.getElementById('lastName').value,
+      email = document.getElementById('email').value,
+      emailConfirm = document.getElementById('emailconfirm').value,
+      city = document.getElementById('city').value,
+      country = document.getElementById('extraField0').value,
+      file = document.getElementById('file').value,
+      rightToWork = radioYes.checked || radioNo.checked ? 'true' : '';
+
+    var inputs = [
+      firstName,
+      lastName,
+      email,
+      emailConfirm,
+      city,
+      country,
+      rightToWork,
+      file
+    ];
+    var check = 0;
+
+    for (var i = 0; i < inputs.length; i++) {
+      if (inputs[i] != '') {
+        check++;
+      }
     }
 
-    function removeErrorMessage(id) {
-        var errorP = document.getElementById(id);
-        errorP.classList.add("hide-error");
-        errorP.classList.remove("show-error");
+    if (check === inputs.length) {
+      document.querySelector('#submitApplicationNow').disabled = false;
+    } else {
+      document.querySelector('#submitApplicationNow').disabled = true;
     }
+  }
 
-    function allowSubmit() {
-        // if all inputs have some value abilitate submit button
-        var radioYes = document.getElementById("extraField-1__Yes"),
-            radioNo = document.getElementById("extraField-1__No");
+  // check file
+  function checkFile() {
+    var files = event.target.files;
+    console.log(event);
+    // When the file has changed, there are new files
+    for (var i = 0; i < files.length; i++) {
+      // check file size: 2e+6 = 2Mb  3e+6 = 3Mb
+      if (files[i].size > 2e6) {
+        event.target.value = '';
+        // return error to user: Size Error!
+        errorMessage('ErrorFile', 'Your file size is too big! Max Size: 2Mb');
+      }
 
-        var firstName = document.getElementById('firstName').value,
-            lastName = document.getElementById('lastName').value,
-            email = document.getElementById('email').value,
-            emailConfirm = document.getElementById('emailconfirm').value,
-            city = document.getElementById('city').value,
-            country = document.getElementById('extraField0').value,
-            file = document.getElementById('file').value,
-            rightToWork = radioYes.checked || radioNo.checked ? "true" : "";
+      // check blob:
+      var blob = files[i]; // See step 1 above
 
-        var inputs = [firstName, lastName, email, emailConfirm, city, country, rightToWork, file];
-        var check = 0;
-
-        for (var i = 0; i < inputs.length; i++) {
-            if (inputs[i] != "") {
-                check++;
-            }
+      var fileReader = new FileReader();
+      fileReader.onloadend = function(e) {
+        var arr = new Uint8Array(e.target.result).subarray(0, 4);
+        var header = '';
+        for (var i = 0; i < arr.length; i++) {
+          header += arr[i].toString(16);
         }
+        console.log(header);
 
-        if (check === inputs.length) {
-            document.querySelector('#submitApplicationNow').disabled = false;
+        if (header === '25504446' || header === '504b34') {
+          removeErrorMessage('ErrorFile');
         } else {
-            document.querySelector('#submitApplicationNow').disabled = true;
+          event.target.value = '';
+          // return error to user: Wrong Type!
+          errorMessage(
+            'ErrorFile',
+            'Your file type is not accepted! Please upload a .pdf or .doc file!'
+          );
         }
+      };
+      fileReader.readAsArrayBuffer(blob);
     }
-
-    // check file
-    function checkFile() {
-
-        var files = event.target.files;
-        console.log(event);
-        // When the file has changed, there are new files
-        for (var i = 0; i < files.length; i++) {
-
-            // check file size: 2e+6 = 2Mb  3e+6 = 3Mb
-            if (files[i].size > 2e+6) {
-                event.target.value = "";
-                // return error to user: Size Error!
-                errorMessage("ErrorFile", "Your file size is too big! Max Size: 2Mb");
-            };
-
-            // check blob:
-            var blob = files[i]; // See step 1 above
-
-            var fileReader = new FileReader();
-            fileReader.onloadend = function (e) {
-                var arr = (new Uint8Array(e.target.result)).subarray(0, 4);
-                var header = "";
-                for (var i = 0; i < arr.length; i++) {
-                    header += arr[i].toString(16);
-                }
-                console.log(header);
-
-                if (header === "25504446" || header === "504b34") {
-                    removeErrorMessage("ErrorFile");
-                } else {
-                    event.target.value = "";
-                    // return error to user: Wrong Type!
-                    errorMessage("ErrorFile", "Your file type is not accepted! Please upload a .pdf or .doc file!");
-                }
-            };
-            fileReader.readAsArrayBuffer(blob);
-        }
-    }
-
-    function applyValidate() {
-        // Reference:
-        var refInput = document.querySelector("#reference > .inputBoxNormal");
-        if (refInput) {
-            refInput.value = function getCookie(a) {
-                var b = "; " + document.cookie, c = b.split("; " + a + "="); if (2 == c.length) return c.pop().split(";").shift()
-            }("ref")
-        }
-
-        return true;
-    }
-
+  }
+  // Reference:
+  var refInput = document.querySelector('#reference > .inputBoxNormal');
+  if (refInput) {
+    refInput.value = (function getCookie(a) {
+      var b = '; ' + document.cookie,
+        c = b.split('; ' + a + '=');
+      if (2 == c.length)
+        return c
+          .pop()
+          .split(';')
+          .shift();
+    })('ref');
+  }
 })();
 
 /* Set the action of the DOM container */
